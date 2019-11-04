@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyTrip</string>
+    <string name="distane">Distância</string>
+    <string name="price">Preço</string>
+    <string name="autonomia">Autonomia</string>
+    <string name="calcular">Calcular</string>
+    <string name="valores_validos">Por favor, informe valores válidos!</string>
+    <string name="total_de_quilometros">Total de Quilometros</string>
+    <string name="total_por_litro">Total por litro</string>
+    <string name="kms_por_litro">KMS por litro</string>
+    <string name="seu_gasto_total_de">Seu gasto total é de:</string>
+    <string name="valor_real">R$ 0</string>
+</resources>
