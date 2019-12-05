@@ -2,6 +2,7 @@ package com.example.mytrip
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,6 +21,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         bt_calcular.setOnClickListener(this)
+
+        val isConnected = TesteConnectionInternet(this).isConnected()
+        Log.w("isconnected", "isConnected => $isConnected")
+
+        val getRoutersThread = TesteConnectionInternet.GetUrlDisponivel()
+        getRoutersThread.setOnResult(object : IThreadResult<Boolean> {
+            override fun onResult(arg: Boolean) {
+                TesteConnectionInternet.isConnect = arg
+                Log.w("isconnected", "IsInternet => $arg")
+            }
+
+        })
+        getRoutersThread.execute()
     }
 
     private fun handleCalculate() {
@@ -36,7 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(this, getString(R.string.valores_validos), Toast.LENGTH_LONG).show()
             }
         } else {
-            Toast.makeText(this, getString(R.string.valores_validos), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.campos_obrigatorios), Toast.LENGTH_LONG).show()
         }
     }
 

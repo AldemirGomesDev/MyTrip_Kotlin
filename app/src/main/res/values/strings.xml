@@ -5,6 +5,7 @@
     <string name="autonomia">Autonomia</string>
     <string name="calcular">Calcular</string>
     <string name="valores_validos">Por favor, informe valores válidos!</string>
+    <string name="campos_obrigatorios">Todos os campos são obrigatórios!</string>
     <string name="total_de_quilometros">Total de Quilometros</string>
     <string name="total_por_litro">Total por litro</string>
     <string name="kms_por_litro">KMS por litro</string>
